@@ -1,6 +1,5 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import helmet from 'helmet'
@@ -30,7 +29,6 @@ app.get('/', function (req, res) {
 app.use('/api/auth', authRoutes)
 app.use('/api/roll', rollRoutes)
 app.use('/api/adminLogin', adminLogin)
-
 
 
 import { MongoClient, ServerApiVersion } from 'mongodb';
