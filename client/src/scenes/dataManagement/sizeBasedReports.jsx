@@ -22,7 +22,6 @@ const SizedBasedReports = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(url + 'api/roll/sizeBasedReports')
-
       const dataForGrid = Object.entries(response.data).map(([size, counts]) => ({
         id: size,
         size,
