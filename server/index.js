@@ -40,10 +40,7 @@ app.use('/api/adminLogin', adminLogin)
 const PORT = process.env.PORT || 9000
 mongoose.set('strictQuery', false)
 mongoose
-    .connect(
-    'mongodb+srv://waqas4693:X32mwglswLXDc22C@cluster0.9qqkzja.mongodb.net/admin?retryWrites=true&w=majority&appName=Cluster0',
-    {
-  // .connect(process.env.MONGO_URL, {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

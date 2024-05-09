@@ -16,22 +16,13 @@ import SizedBasedReports from 'scenes/dataManagement/sizeBasedReports'
 function App () {
   const mode = useSelector(state => state.global.mode)
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
-  const [isAuthenticated, setIsAuthenticated] = useState(
-    localStorage.getItem('isAuthenticated') === 'true'
-  );
-  const [showForms, setShowForms] = useState(true)
+  
   return (
     <div className='app'>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-
-            {!isAuthenticated && !showForms && (
-              <Route path='/*' element={<Navigate to='/' replace />} />
-            )}
-
-            {isAuthenticated && (
               <Route element={<Layout />}>
                 <Route path='/' element={<ViewEntries />} />
                 <Route path='/addEntry' element={<AddEntry />} />
@@ -41,7 +32,6 @@ function App () {
                 <Route path='/editEntry/:rollData' element={<AddEntry />} />
                 <Route path='/viewWeaverNames/:weaverNamesArray' element={<ViewWeaverNames />} />
               </Route>
-            )}
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
