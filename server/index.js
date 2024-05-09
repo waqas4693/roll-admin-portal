@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 /* ROUTES */
 
 // Default route
-app.get('/', function (res) {
+app.get('/', function (req, res) {
   res.json('Server Running')
 })
 app.use('/api/auth', authRoutes)
