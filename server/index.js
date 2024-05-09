@@ -36,7 +36,7 @@ const PORT = process.env.PORT || 9000
 mongoose.set('strictQuery', false)
 
 mongoose
-.connect('mongodb://waqas:waqas123456@cluster0.9qqkzja.mongodb.net/admin', {
+.connect('mongodb://waqas:waqas123456@cluster0.9qqkzja.mongodb.net/test', {
   // .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
