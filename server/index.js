@@ -36,16 +36,14 @@ app.use('/api/auth', authRoutes)
 app.use('/api/roll', rollRoutes)
 app.use('/api/adminLogin', adminLogin)
 
-app.use('/audios', express.static('audios'))
-
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000
 mongoose.set('strictQuery', false)
 mongoose
-    // .connect(
-    // 'mongodb+srv://waqas4693:jq5wJ3C6YFF16Amu@cluster0.c4givi4.mongodb.net/edu_supplements?retryWrites=true&w=majority',
-    // {
-  .connect(process.env.MONGO_URL, {
+    .connect(
+    'mongodb+srv://waqas4693:X32mwglswLXDc22C@cluster0.9qqkzja.mongodb.net/admin?retryWrites=true&w=majority&appName=Cluster0',
+    {
+  // .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
