@@ -27,6 +27,10 @@ export const createRoll = async (req, res) => {
       rToRMp
     })
 
+    console.log('Roll Data = ')
+    console.log(req.body)
+
+
     const savedRoll = await roll.save()
 
     for (const weaverNameData of weaverNames) {

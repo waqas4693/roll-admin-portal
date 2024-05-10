@@ -5,6 +5,8 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import helmet from 'helmet'
 import morgan from 'morgan'
+import { MongoClient } from 'mongodb';
+
 
 import rollRoutes from './routes/roll.js'
 import authRoutes from './routes/authRoutes.js'
@@ -68,8 +70,8 @@ const PORT = process.env.PORT || 9000
 mongoose.set('strictQuery', false)
 
 mongoose
-.connect('mongodb://waqas4693:jq5wJ3C6YFF16Amu@cluster0.9qqkzja.mongodb.net/edu_supplements', {
-  // .connect(process.env.MONGO_URL, {
+// .connect('mongodb://waqas4693:jq5wJ3C6YFF16Amu@cluster0.9qqkzja.mongodb.net/edu_supplements', {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -77,5 +79,38 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
   })
   .catch(error => console.log(`${error} did not connect`))
+
+
+const uri = 'mongodb+srv://waqas4693:jq5wJ3C6YFF16Amu@cluster0.c4givi4.mongodb.net/edu_supplements?retryWrites=true&w=majority&appName=Cluster0';
+
+async function connectToMongoDB() {
+  const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+  try {
+    // Connect to the MongoDB Atlas cluster
+    await client.connect();
+    console.log('Connected to MongoDB Atlas');
+
+    // Perform operations using the client object
+    const database = client.db('edu_supplements');
+    const collection = database.collection('rolls');
+
+    // Example: Insert document
+    const result = await collection.insertOne({ key: 'size' });
+    console.log(`Inserted ${result.insertedCount} document`);
+
+    // Example: Find documents
+    const documents = await collection.find({}).toArray();
+    console.log('Found documents:', documents);
+  } catch (error) {
+    console.error('Error connecting to MongoDB Atlas:', error);
+  } finally {
+    // Close the MongoDB Atlas connection
+    // await client.close();
+    // console.log('Disconnected from MongoDB Atlas');
+  }
+}
+
+// connectToMongoDB()
 
 export default app
