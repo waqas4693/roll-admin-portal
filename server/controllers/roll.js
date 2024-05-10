@@ -64,12 +64,12 @@ export const getAllRolls = async (req, res) => {
     //   }
     // ])
 
-    const result = await Roll.find()
+    // const result = await Roll.find()
 
     console.log('Roll Records Node Js:')
-    console.log(result)
+    // console.log(result)
 
-    res.status(200).json(result)
+    res.status(200).json('Success')
   } catch (error) {
     res.status(500).json({ message: error.message })
   }
