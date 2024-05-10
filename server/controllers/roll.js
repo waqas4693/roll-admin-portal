@@ -53,16 +53,18 @@ export const createRoll = async (req, res) => {
 
 export const getAllRolls = async (req, res) => {
   try {
-    const result = await Roll.aggregate([
-      {
-        $lookup: {
-          from: 'weavernames',
-          localField: '_id',
-          foreignField: 'rollId',
-          as: 'weaverNames'
-        }
-      }
-    ])
+    // const result = await Roll.aggregate([
+    //   {
+    //     $lookup: {
+    //       from: 'weavernames',
+    //       localField: '_id',
+    //       foreignField: 'rollId',
+    //       as: 'weaverNames'
+    //     }
+    //   }
+    // ])
+
+    const result = await Roll.find()
 
     console.log('Roll Records Node Js:')
     console.log(result)
