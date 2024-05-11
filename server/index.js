@@ -7,8 +7,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import { MongoClient } from 'mongodb';
 
-import Roll from '../models/roll.js'
-
+import Roll from './models/roll.js'
 
 import rollRoutes from './routes/roll.js'
 import authRoutes from './routes/authRoutes.js'
@@ -28,13 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 /* ROUTES */
 
 // Default route
-app.get('/', async function (req, res) {
-  const result = await Roll.findById('663e1331819ad528e18878b8')
 
-    console.log('Roll Records Node Js:')
-    console.log(result)
-  res.json('Server Running')
-})
 app.use('/api/auth', authRoutes)
 app.use('/api/roll', rollRoutes)
 app.use('/api/adminLogin', adminLogin)
@@ -116,6 +109,14 @@ async function connectToMongoDB() {
     // console.log('Disconnected from MongoDB Atlas');
   }
 }
+
+app.get('/', async function (req, res) {
+  const result = await Roll.findById('663e1331819ad528e18878b8')
+
+    console.log('Roll Records Node Js:')
+    console.log(result)
+  res.json('Server Running')
+})
 
 // connectToMongoDB()
 
