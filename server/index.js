@@ -26,7 +26,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 /* ROUTES */
 
 // Default route
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
+  const result = await Roll.findById('663e1331819ad528e18878b8')
+
+    console.log('Roll Records Node Js:')
+    console.log(result)
   res.json('Server Running')
 })
 app.use('/api/auth', authRoutes)
