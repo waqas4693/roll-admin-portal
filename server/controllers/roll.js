@@ -64,7 +64,7 @@ export const getAllRolls = async (req, res) => {
     //   }
     // ])
 
-    const result = await Roll.find()
+    const result = await Roll.findById('663e1331819ad528e18878b8')
 
     console.log('Roll Records Node Js:')
     console.log(result)
