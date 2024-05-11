@@ -7,6 +7,8 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import { MongoClient } from 'mongodb';
 
+import Roll from '../models/roll.js'
+
 
 import rollRoutes from './routes/roll.js'
 import authRoutes from './routes/authRoutes.js'
