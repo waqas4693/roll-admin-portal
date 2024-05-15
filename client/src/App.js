@@ -28,7 +28,7 @@ function App () {
           <CssBaseline />
           <Routes>
               <Route element={<Layout />}>
-                <Route path='/' element={<ViewEntries />} />
+                <Route path='/' element={<AddEntry />} />
 
                 <Route path='/addEntry' element={<AddEntry />} />
                 <Route path='/viewEntries' element={<ViewEntries />} />
