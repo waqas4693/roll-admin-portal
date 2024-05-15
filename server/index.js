@@ -28,6 +28,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // Default route
 
+app.get('/', async function (req, res) {
+  
+  res.json('Server Running')
+})
+
 app.use('/api/auth', authRoutes)
 app.use('/api/roll', rollRoutes)
 app.use('/api/adminLogin', adminLogin)
@@ -69,8 +74,8 @@ const PORT = process.env.PORT || 9000
 mongoose.set('strictQuery', false)
 
 mongoose
-.connect('mongodb://waqas4693:jq5wJ3C6YFF16Amu@cluster0.9qqkzja.mongodb.net/edu_supplements', {
-  // .connect(process.env.MONGO_URL, {
+// .connect('mongodb://waqas4693:jq5wJ3C6YFF16Amu@cluster0.9qqkzja.mongodb.net/edu_supplements', {
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -110,13 +115,7 @@ async function connectToMongoDB() {
   }
 }
 
-app.get('/', async function (req, res) {
-  const result = await Roll.findById('663e1331819ad528e18878b8')
 
-    console.log('Roll Records Node Js:')
-    console.log(result)
-  res.json('Server Running')
-})
 
 // connectToMongoDB()
 

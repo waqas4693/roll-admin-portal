@@ -29,6 +29,10 @@ const SizedBasedReports = () => {
       }));
 
       setRolls(dataForGrid);
+
+      console.log('Report Data Size Based = ');
+      console.log(dataForGrid);
+
     } catch (error) {
       console.error('Error fetching rolls data:', error)
     }

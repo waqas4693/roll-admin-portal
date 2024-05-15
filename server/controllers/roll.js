@@ -53,23 +53,21 @@ export const createRoll = async (req, res) => {
 
 export const getAllRolls = async (req, res) => {
   try {
-    // const result = await Roll.aggregate([
-    //   {
-    //     $lookup: {
-    //       from: 'weavernames',
-    //       localField: '_id',
-    //       foreignField: 'rollId',
-    //       as: 'weaverNames'
-    //     }
-    //   }
-    // ])
+    const result = await Roll.aggregate([
+      {
+        $lookup: {
+          from: 'weavernames',
+          localField: '_id',
+          foreignField: 'rollId',
+          as: 'weaverNames'
+        }
+      }
+    ])
 
-    const result = await Roll.findById('663e1331819ad528e18878b8')
+    console.log('Result = ')
+    console.log(result);
 
-    console.log('Roll Records Node Js:')
-    console.log(result)
-
-    res.status(200).json('Success')
+    res.status(200).json(result)
   } catch (error) {
     res.status(500).json({ message: error.message })
   }
@@ -103,7 +101,7 @@ export const getSizeBasedReports = async (req, res) => {
       }
     }
 
-    return result
+    res.status(200).json(result)
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Server error' })

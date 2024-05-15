@@ -13,6 +13,10 @@ import ViewEntries from 'scenes/dataManagement/viewEntries'
 import ViewWeaverNames from 'scenes/dataManagement/viewWeaverNames'
 import SizedBasedReports from 'scenes/dataManagement/sizeBasedReports'
 
+import Company from 'scenes/company/company'
+import Finishing from 'scenes/finishing/finishing'
+import Order from 'scenes/order/order'
+
 function App () {
   const mode = useSelector(state => state.global.mode)
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode])
@@ -25,9 +29,13 @@ function App () {
           <Routes>
               <Route element={<Layout />}>
                 <Route path='/' element={<ViewEntries />} />
+
                 <Route path='/addEntry' element={<AddEntry />} />
                 <Route path='/viewEntries' element={<ViewEntries />} />
                 <Route path='/sizeBasedReports' element={<SizedBasedReports />} />
+                <Route path='/company' element={<Company />} />
+                <Route path='/finishing' element={<Finishing />} />
+                <Route path='/order' element={<Order />} />
 
                 <Route path='/editEntry/:rollData' element={<AddEntry />} />
                 <Route path='/viewWeaverNames/:weaverNamesArray' element={<ViewWeaverNames />} />

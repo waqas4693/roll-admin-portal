@@ -21,9 +21,17 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import FlexBetween from './FlexBetween'
 
 const navItems = [
-  { text: 'Add Entry', icon: <PublicOutlined />, path: '/addEntry' },
-  { text: 'View Entries', icon: <GroupsOutlined />, path: '/viewEntries' },
-  { text: 'Size Based Reports', icon: <GroupsOutlined />, path: '/sizeBasedReports' }
+  { text: 'Add New Employee', icon: <PublicOutlined />, path: '/addEntry' },
+  { text: 'Add New Company', icon: <PublicOutlined />, path: '/company' },
+  { text: 'Finishing', icon: <PublicOutlined />, path: '/finishing' },
+  { text: 'New Orders', icon: <PublicOutlined />, path: '/order' },
+  { text: 'Looms', icon: <PublicOutlined />, path: '' },
+  { text: 'Material', icon: <PublicOutlined />, path: '' },
+  { text: 'Order Tracking', icon: <PublicOutlined />, path: '' },
+  { text: 'Reports', icon: <PublicOutlined />, path: '' },
+  { text: 'Gallery', icon: <PublicOutlined />, path: '' },
+  // { text: 'View Entries', icon: <GroupsOutlined />, path: '/viewEntries' },
+  // { text: 'Size Based Reports', icon: <GroupsOutlined />, path: '/sizeBasedReports' }
 
 ]
 
