@@ -30,6 +30,7 @@ const navItems = [
   { text: 'Order Tracking', icon: <PublicOutlined />, path: '' },
   { text: 'Reports', icon: <PublicOutlined />, path: '' },
   { text: 'Gallery', icon: <PublicOutlined />, path: '' },
+  { text: 'Dispatch', icon: <PublicOutlined />, path: '' },
   // { text: 'View Entries', icon: <GroupsOutlined />, path: '/viewEntries' },
   // { text: 'Size Based Reports', icon: <GroupsOutlined />, path: '/sizeBasedReports' }
 
