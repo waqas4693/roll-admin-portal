@@ -1,16 +1,16 @@
 const lightPrimaryColor = "#6610f2";
-const lightSecondaryColor = "#E91E63";
+const lightSecondaryColor = "#87CEEB";
 const lightGreyColor = "#F5F5F5";
 const lightWhiteColor = "#F8F8FF";
 const whiteColor = "#FFFFFF";
 
 const darkPrimaryColor = "#6610f2";
-const darkSecondaryColor = "#E91E63";
+const darkSecondaryColor = "#87CEEB";
 const darkGreyColor = "#212121";
 const lightBlackColor = "#0D0907";
 const blackColor = "#000000";
 
-const sideBarColor = "#4e73df";
+const sideBarColor = "#87CEEB";
 
 
 export const tokensDark = {

@@ -215,16 +215,16 @@ const Finishing = () => {
               <Grid item xs={0.5}>
                 <IconButton
                   aria-label='delete'
-                  sx={{ color: '#ff0000' }} // Specify color here
+                  sx={{ color: '#ff0000' }}
                   onClick={() => removeRoll(index)}
                 >
                   <DeleteIcon />
                 </IconButton>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={2}>
                 <TextField
                   size='small'
-                  label='Size Width'
+                  label='Width'
                   variant='outlined'
                   value={roll.sizeWidth}
                   onChange={e =>
@@ -233,10 +233,10 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={3}>
+              <Grid item xs={2}>
                 <TextField
                   size='small'
-                  label='Size Height'
+                  label='Height'
                   value={roll.sizeHeight}
                   onChange={e =>
                     handleRollChange(index, 'sizeHeight', e.target.value)
@@ -244,7 +244,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <TextField
                   size='small'
                   label='Loom No'
@@ -255,7 +255,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <TextField
                   size='small'
                   label='Roll No'
@@ -266,7 +266,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <TextField
                   size='small'
                   label='Color'
@@ -277,7 +277,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={2}>
                 <TextField
                   size='small'
                   label='Lamination'
@@ -288,7 +288,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={1.5}>
                 <TextField
                   size='small'
                   label='Print Status'
@@ -299,7 +299,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={1.5}>
                 <TextField
                   size='small'
                   label='Miss Print'
@@ -310,7 +310,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={1.5}>
                 <TextField
                   size='small'
                   label='Miss Pick'
@@ -321,13 +321,46 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={1.5}>
                 <TextField
                   size='small'
                   label='Fresh Bags'
                   value={roll.freshBags}
                   onChange={e =>
                     handleRollChange(index, 'freshBags', e.target.value)
+                  }
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={1.5}>
+                <TextField
+                  size='small'
+                  label='Weight'
+                  value={roll.weight}
+                  onChange={e =>
+                    handleRollChange(index, 'weight', e.target.value)
+                  }
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={1.5}>
+                <TextField
+                  size='small'
+                  label='BOPP'
+                  value={roll.bopp}
+                  onChange={e =>
+                    handleRollChange(index, 'bopp', e.target.value)
+                  }
+                  fullWidth
+                />
+              </Grid>
+              <Grid item xs={1.5}>
+                <TextField
+                  size='small'
+                  label='Roll to Roll'
+                  value={roll.rollToRoll}
+                  onChange={e =>
+                    handleRollChange(index, 'rollToRoll', e.target.value)
                   }
                   fullWidth
                 />
@@ -339,39 +372,6 @@ const Finishing = () => {
                   value={roll.totalBags}
                   onChange={e =>
                     handleRollChange(index, 'totalBags', e.target.value)
-                  }
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  size='small'
-                  label='Weight'
-                  value={roll.weight}
-                  onChange={e =>
-                    handleRollChange(index, 'weight', e.target.value)
-                  }
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  size='small'
-                  label='BOPP'
-                  value={roll.bopp}
-                  onChange={e =>
-                    handleRollChange(index, 'bopp', e.target.value)
-                  }
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={6}>
-                <TextField
-                  size='small'
-                  label='Roll to Roll'
-                  value={roll.rollToRoll}
-                  onChange={e =>
-                    handleRollChange(index, 'rollToRoll', e.target.value)
                   }
                   fullWidth
                 />

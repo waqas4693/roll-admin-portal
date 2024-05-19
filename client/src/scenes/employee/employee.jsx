@@ -8,10 +8,6 @@ import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
-import MenuItem from '@mui/material/MenuItem'
-import Select from '@mui/material/Select'
-import InputLabel from '@mui/material/InputLabel'
-import FormControl from '@mui/material/FormControl'
 
 function CustomTabPanel (props) {
   const { children, value, index, ...other } = props
@@ -46,26 +42,26 @@ function a11yProps (index) {
   }
 }
 
-const Order = () => {
+const Employee = () => {
   const [value, setValue] = useState(0)
-  const [order, setOrder] = useState({
-    companyName: '',
-    size: '',
-    quantity: '',
-    colour: '',
-    lamination: '',
-    normal: '',
-    unit: '',
-    weight: '',
-    print: '',
-    description: ''
+  const [employee, setEmployee] = useState({
+    name: '',
+    fatherName: '',
+    dob: '',
+    cellNo: '',
+    passportNo: '',
+    passportStart: '',
+    passportExpiry: '',
+    aqamaId: '',
+    aqamaStart: '',
+    aqamaExpiry: '',
+    workingDepartment: '',
+    joiningDate: '',
+    resigningDate: '',
+    nationality: '',
+    bankAccountNo: '',
+    visaStatus: ''
   })
-
-  const [companies, setCompanies] = useState([
-    'Company A',
-    'Company B',
-    'Company C'
-  ])
 
   const handleChange = (event, newValue) => {
     setValue(newValue)
@@ -73,11 +69,7 @@ const Order = () => {
 
   const handleInputChange = e => {
     const { name, value } = e.target
-    setOrder({ ...order, [name]: value })
-  }
-
-  const handleSelectChange = e => {
-    setOrder({ ...order, companyName: e.target.value })
+    setEmployee({ ...employee, [name]: value })
   }
 
   return (
@@ -89,8 +81,8 @@ const Order = () => {
           aria-label='basic tabs example'
           centered
         >
-          <Tab label='Add Order' {...a11yProps(0)} />
-          <Tab label='Edit Order' {...a11yProps(1)} />
+          <Tab label='Add Employee' {...a11yProps(0)} />
+          <Tab label='Edit Employee' {...a11yProps(1)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
@@ -106,30 +98,14 @@ const Order = () => {
         >
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <h2>Order Details</h2>
-            </Grid>
-            <Grid item xs={6}>
-              <FormControl size='small' fullWidth>
-                <InputLabel>Select Company</InputLabel>
-                <Select
-                  value={order.companyName}
-                  label='Select Company'
-                  onChange={handleSelectChange}
-                >
-                  {companies.map((company, index) => (
-                    <MenuItem key={index} value={company}>
-                      {company}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </FormControl>
+              <h2>Employee Details</h2>
             </Grid>
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Size'
-                name='size'
-                value={order.size}
+                label='Name'
+                name='name'
+                value={employee.name}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -137,9 +113,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Quantity'
-                name='quantity'
-                value={order.quantity}
+                label='Father Name'
+                name='fatherName'
+                value={employee.fatherName}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -147,9 +123,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Colour'
-                name='colour'
-                value={order.colour}
+                label='DOB'
+                name='dob'
+                value={employee.dob}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -157,9 +133,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Lamination'
-                name='lamination'
-                value={order.lamination}
+                label='Cell No'
+                name='cellNo'
+                value={employee.cellNo}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -167,9 +143,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Normal'
-                name='normal'
-                value={order.normal}
+                label='Passport No'
+                name='passportNo'
+                value={employee.passportNo}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -177,9 +153,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Unit'
-                name='unit'
-                value={order.unit}
+                label='Passport Start'
+                name='passportStart'
+                value={employee.passportStart}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -187,9 +163,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Weight'
-                name='weight'
-                value={order.weight}
+                label='Passport Expiry'
+                name='passportExpiry'
+                value={employee.passportExpiry}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -197,23 +173,91 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Print'
-                name='print'
-                value={order.print}
+                label='Aqama ID'
+                name='aqamaId'
+                value={employee.aqamaId}
                 onChange={handleInputChange}
                 fullWidth
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Description'
-                name='description'
-                value={order.description}
+                label='Aqama Start'
+                name='aqamaStart'
+                value={employee.aqamaStart}
                 onChange={handleInputChange}
                 fullWidth
-                multiline
-                rows={4}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                size='small'
+                label='Aqama Expiry'
+                name='aqamaExpiry'
+                value={employee.aqamaExpiry}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                size='small'
+                label='Working Department'
+                name='workingDepartment'
+                value={employee.workingDepartment}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                size='small'
+                label='Employee Joining Date'
+                name='joiningDate'
+                value={employee.joiningDate}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                size='small'
+                label='Employee Resigning Date'
+                name='resigningDate'
+                value={employee.resigningDate}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                size='small'
+                label='Nationality'
+                name='nationality'
+                value={employee.nationality}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                size='small'
+                label='Bank Account No'
+                name='bankAccountNo'
+                value={employee.bankAccountNo}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                size='small'
+                label='Visa Status'
+                name='visaStatus'
+                value={employee.visaStatus}
+                onChange={handleInputChange}
+                fullWidth
               />
             </Grid>
             <Grid item xs={12} style={{ textAlign: 'right' }}>
@@ -229,10 +273,10 @@ const Order = () => {
         </Box>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Edit Order
+        Edit Employee
       </CustomTabPanel>
     </Box>
   )
 }
 
-export default Order
+export default Employee

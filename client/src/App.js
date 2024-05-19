@@ -16,6 +16,7 @@ import SizedBasedReports from 'scenes/dataManagement/sizeBasedReports'
 import Company from 'scenes/company/company'
 import Finishing from 'scenes/finishing/finishing'
 import Order from 'scenes/order/order'
+import Employee from 'scenes/employee/employee'
 
 function App () {
   const mode = useSelector(state => state.global.mode)
@@ -30,7 +31,7 @@ function App () {
               <Route element={<Layout />}>
                 <Route path='/' element={<AddEntry />} />
 
-                <Route path='/addEntry' element={<AddEntry />} />
+                <Route path='/employee' element={<Employee />} />
                 <Route path='/viewEntries' element={<ViewEntries />} />
                 <Route path='/sizeBasedReports' element={<SizedBasedReports />} />
                 <Route path='/company' element={<Company />} />
