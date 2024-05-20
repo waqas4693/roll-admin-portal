@@ -140,7 +140,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Passport No'
@@ -150,7 +150,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Passport Start'
@@ -160,7 +160,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Passport Expiry'
@@ -170,7 +170,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Aqama ID'
@@ -180,7 +180,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Aqama Start'
@@ -190,7 +190,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Aqama Expiry'
@@ -200,37 +200,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
-              <TextField
-                size='small'
-                label='Working Department'
-                name='workingDepartment'
-                value={employee.workingDepartment}
-                onChange={handleInputChange}
-                fullWidth
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                size='small'
-                label='Employee Joining Date'
-                name='joiningDate'
-                value={employee.joiningDate}
-                onChange={handleInputChange}
-                fullWidth
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <TextField
-                size='small'
-                label='Employee Resigning Date'
-                name='resigningDate'
-                value={employee.resigningDate}
-                onChange={handleInputChange}
-                fullWidth
-              />
-            </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Nationality'
@@ -240,7 +210,7 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Bank Account No'
@@ -250,12 +220,42 @@ const Employee = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Visa Status'
                 name='visaStatus'
                 value={employee.visaStatus}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                size='small'
+                label='Working Department'
+                name='workingDepartment'
+                value={employee.workingDepartment}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                size='small'
+                label='Employee Joining Date'
+                name='joiningDate'
+                value={employee.joiningDate}
+                onChange={handleInputChange}
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <TextField
+                size='small'
+                label='Employee Resigning Date'
+                name='resigningDate'
+                value={employee.resigningDate}
                 onChange={handleInputChange}
                 fullWidth
               />

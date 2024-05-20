@@ -54,8 +54,8 @@ const Order = () => {
     quantity: '',
     colour: '',
     lamination: '',
-    normal: '',
-    unit: '',
+    costPrice: '',
+    salePrice: '',
     weight: '',
     print: '',
     description: ''
@@ -167,9 +167,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Normal'
-                name='normal'
-                value={order.normal}
+                label='Cost Price'
+                name='costPrice'
+                value={order.costPrice}
                 onChange={handleInputChange}
                 fullWidth
               />
@@ -177,9 +177,9 @@ const Order = () => {
             <Grid item xs={6}>
               <TextField
                 size='small'
-                label='Unit'
-                name='unit'
-                value={order.unit}
+                label='Sale Price'
+                name='salePrice'
+                value={order.salePrice}
                 onChange={handleInputChange}
                 fullWidth
               />

@@ -50,7 +50,7 @@ const Company = () => {
     cellNo: '',
     email: '',
     vatNo: '',
-    contactPersonNumber: '',
+    contactPersonName: '',
     companyStatus: '',
     startDate: '',
     endDate: ''
@@ -133,7 +133,7 @@ const Company = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='VAT No'
@@ -143,17 +143,17 @@ const Company = () => {
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
-                label='Contact Person Number'
-                name='contactPersonNumber'
-                value={company.contactPersonNumber}
+                label='Contact Person Name'
+                name='contactPersonName'
+                value={company.contactPersonName}
                 onChange={handleInputChange}
                 fullWidth
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <TextField
                 size='small'
                 label='Company Status'

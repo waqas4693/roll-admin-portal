@@ -233,6 +233,18 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
+              <Grid item xs={2} container justify='center' alignItems='center'>
+                <span
+                  style={{
+                    display: 'block',
+                    textAlign: 'center',
+                    width: '100%',
+                    fontSize: '1rem'
+                  }}
+                >
+                  X
+                </span>
+              </Grid>
               <Grid item xs={2}>
                 <TextField
                   size='small'
@@ -244,7 +256,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={3}>
                 <TextField
                   size='small'
                   label='Loom No'
@@ -255,7 +267,7 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={3}>
                 <TextField
                   size='small'
                   label='Roll No'
@@ -266,24 +278,13 @@ const Finishing = () => {
                   fullWidth
                 />
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={1.5}>
                 <TextField
                   size='small'
                   label='Color'
                   value={roll.color}
                   onChange={e =>
                     handleRollChange(index, 'color', e.target.value)
-                  }
-                  fullWidth
-                />
-              </Grid>
-              <Grid item xs={2}>
-                <TextField
-                  size='small'
-                  label='Lamination'
-                  value={roll.lamination}
-                  onChange={e =>
-                    handleRollChange(index, 'lamination', e.target.value)
                   }
                   fullWidth
                 />
