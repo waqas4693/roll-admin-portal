@@ -5,13 +5,11 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import helmet from 'helmet'
 import morgan from 'morgan'
-import { MongoClient } from 'mongodb';
-
-import Roll from './models/roll.js'
 
 import rollRoutes from './routes/roll.js'
 import authRoutes from './routes/authRoutes.js'
 import adminLogin from './routes/adminLogin.js'
+import employeeRoutes from './routes/employee.js'
 
 /* CONFIGURATION */
 dotenv.config()
@@ -36,12 +34,13 @@ app.get('/', async function (req, res) {
 app.use('/api/auth', authRoutes)
 app.use('/api/roll', rollRoutes)
 app.use('/api/adminLogin', adminLogin)
+app.use('/api/employee', employeeRoutes)
 
 mongoose.set('strictQuery', false)
 await mongoose
-  .connect(process.env.MONGO_URL)
+  .connect('mongodb+srv://waqas4693:waqas4693@cluster0.qhjlygp.mongodb.net/roll_records?retryWrites=true&w=majority&appName=Cluster0')
   .then(() => {
-    app.listen(process.env.PORT, () => console.log(`Server Port: ${process.env.PORT}`));
+    app.listen(5001, () => console.log(`Server Port: ${5001}`));
   })
   .catch(error => console.log(`${error} did not connect`))
 

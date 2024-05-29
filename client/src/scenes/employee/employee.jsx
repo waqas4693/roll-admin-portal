@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
+import url from 'config/server-url'
+import axios from 'axios'
 import PropTypes from 'prop-types'
 import SaveIcon from '@mui/icons-material/Save'
 import TextField from '@mui/material/TextField'
@@ -8,6 +10,7 @@ import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import CustomSnackbar from 'components/CustomSnackbar'
 
 function CustomTabPanel (props) {
   const { children, value, index, ...other } = props
@@ -43,6 +46,7 @@ function a11yProps (index) {
 }
 
 const Employee = () => {
+  const snackbarRef = useRef()
   const [value, setValue] = useState(0)
   const [employee, setEmployee] = useState({
     name: '',
@@ -71,6 +75,51 @@ const Employee = () => {
     const { name, value } = e.target
     setEmployee({ ...employee, [name]: value })
   }
+
+  const handleEmployeeSave = async () => {
+    try {
+      const formData = new FormData();
+      Object.keys(employee).forEach(key => {
+        formData.append(key, employee[key]);
+      });
+
+      const response = await axios.post(
+        url + 'api/employee',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+
+      if (response.status === 200) {
+        snackbarRef.current.displaySnackBar('Employee Added', 'success')
+
+        setEmployee({
+          name: '',
+          fatherName: '',
+          dob: '',
+          cellNo: '',
+          passportNo: '',
+          passportStart: '',
+          passportExpiry: '',
+          aqamaId: '',
+          aqamaStart: '',
+          aqamaExpiry: '',
+          workingDepartment: '',
+          joiningDate: '',
+          resigningDate: '',
+          nationality: '',
+          bankAccountNo: '',
+          visaStatus: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error saving employee:', error);
+    }
+  };
+
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -265,6 +314,7 @@ const Employee = () => {
                 variant='contained'
                 color='primary'
                 startIcon={<SaveIcon />}
+                onClick={handleEmployeeSave}
               >
                 Save
               </Button>
@@ -275,6 +325,7 @@ const Employee = () => {
       <CustomTabPanel value={value} index={1}>
         Edit Employee
       </CustomTabPanel>
+      <CustomSnackbar ref={snackbarRef} />
     </Box>
   )
 }

@@ -1,7 +1,7 @@
 import express from "express";
 import {
-  createRoll,
-  getAllRolls,
+  addEmployeeRolls,
+  getRollRecords,
   getSizeBasedReports,
   updateRollData,
   deleteRollData
@@ -9,8 +9,9 @@ import {
 
 const router = express.Router();
 
-router.post("/", createRoll);
-router.get("/", getAllRolls);
+router.post("/", addEmployeeRolls);
+router.get("/", getRollRecords);
+
 router.get("/sizeBasedReports", getSizeBasedReports);
 router.put("/:rollId", updateRollData);
 router.delete("/:rollId", deleteRollData);

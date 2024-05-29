@@ -1,47 +1,66 @@
 import mongoose from 'mongoose'
 
 const rollSchema = new mongoose.Schema({
-  size: {
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  session: {
     type: String,
     required: true
+  },
+  employeeId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Employee',
+    required: true
+  },
+  sizeWidth: {
+    type: String
+  },
+  sizeHeight: {
+    type: String
   },
   loomNo: {
-    type: String,
-    required: true
+    type: String
   },
   rollNo: {
-    type: String,
-    required: true
+    type: String
   },
-  inPercentage: {
-    type: String,
-    required: true
+  color: {
+    type: String
   },
   lamination: {
-    type: String,
-    required: true
+    type: String
   },
-  status: {
-    type: String,
-    required: true
+  printStatus: {
+    type: String
+  },
+  missPrint: {
+    type: String
+  },
+  missPick: {
+    type: String
+  },
+  freshBags: {
+    type: String
+  },
+  totalBags: {
+    type: String
+  },
+  weight: {
+    type: String
   },
   bopp: {
-    type: String,
-    required: true
+    type: String
   },
-  rToRMp: {
-    type: String,
-    required: true
+  rollToRoll: {
+    type: String
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now
+  laminationDamage: {
+    type: String
   }
 })
 
-const roll = mongoose.model('roll', rollSchema)
-export default roll
+const Roll = mongoose.model('Roll', rollSchema)
+
+export default Roll
